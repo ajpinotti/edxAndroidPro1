@@ -58,21 +58,6 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
         mProgressView = findViewById(R.id.login_progress);
 
         loginPresenter = new LoginPresenterImplementation(this);
-
-        Button mShowSnackBarButton = (Button) findViewById(R.id.show_snackbar);
-        mShowSnackBarButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(mLoginFormView,
-                        "This is a simple Snackbar", Snackbar.LENGTH_LONG)
-                        .setAction("CLOSE", new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                // Custom action
-                            }
-                        }).show();
-            }
-        });
     }
 
     /**
