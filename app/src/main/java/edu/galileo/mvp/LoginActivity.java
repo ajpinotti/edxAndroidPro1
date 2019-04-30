@@ -18,10 +18,15 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+import butterknife.OnClick;
 import edu.galileo.mvp.event.CanceledEvent;
 import edu.galileo.mvp.event.PasswordErrorEvent;
 import edu.galileo.mvp.event.SuccessEvent;
 import edu.galileo.mvp.event.UserNameErrorEvent;
+
 
 /**
  * A login screen that offers login via email/password.
@@ -31,31 +36,18 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     private LoginPresenter loginPresenter;
 
     // UI references.
-    private AutoCompleteTextView mEmailView;
-    private EditText mPasswordView;
-    private View mProgressView;
-    private View mLoginFormView;
+    @BindView(R.id.email) AutoCompleteTextView mEmailView;
+    @BindView(R.id.password) EditText mPasswordView;
+    @BindView(R.id.login_progress) View mProgressView;
+    @BindView(R.id.login_form) View mLoginFormView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        // Set up the login form.
-        mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
+        ButterKnife.bind(this);
 
-        mPasswordView = (EditText) findViewById(R.id.password);
-
-        Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
-        mEmailSignInButton.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                attemptLogin();
-            }
-        });
-
-        mLoginFormView = findViewById(R.id.login_form);
-        mProgressView = findViewById(R.id.login_progress);
+        // Using ButterKnife annotation library now
 
         loginPresenter = new LoginPresenterImplementation(this);
     }
@@ -65,7 +57,8 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
      * If there are form errors (invalid email, missing fields, etc.), the
      * errors are presented and no actual login attempt is made.
      */
-    private void attemptLogin() {
+    @OnClick(R.id.email_sign_in_button)
+    public void attemptLogin() {
         // Reset errors.
         mEmailView.setError(null);
         mPasswordView.setError(null);
