@@ -34,6 +34,7 @@ dependencies {
     implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
     implementation "com.android.support:design:$rootProject.ext.supportLibraryVersion"
     implementation "com.android.support:support-v4:$rootProject.supportLibraryVersion"
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 
 //    implementation "com.google.firebase:firebase-database:$rootProject.ext.firebaseVersion"
 //    implementation "com.google.firebase:firebase-auth:$rootProject.ext.firebaseVersion"

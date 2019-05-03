@@ -12,4 +12,7 @@
     <string name="error_field_required">This field is required</string>
     <string name="error_user_not_found">This username was not found. Use your registered email.</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
+
+    <string name="hello_world">"Hello Constraint World"</string>
+    <string name="constraint_button_lbl">"Constraint Button"</string>
 </resources>
