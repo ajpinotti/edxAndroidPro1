@@ -12,6 +12,7 @@ import android.view.View.OnClickListener;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import org.greenrobot.eventbus.EventBus;
@@ -22,10 +23,13 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import butterknife.OnClick;
+import de.hdodenhof.circleimageview.CircleImageView;
 import edu.galileo.mvp.event.CanceledEvent;
 import edu.galileo.mvp.event.PasswordErrorEvent;
 import edu.galileo.mvp.event.SuccessEvent;
 import edu.galileo.mvp.event.UserNameErrorEvent;
+
+import com.bumptech.glide.Glide;
 
 
 /**
@@ -40,6 +44,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     @BindView(R.id.password) EditText mPasswordView;
     @BindView(R.id.login_progress) View mProgressView;
     @BindView(R.id.login_form) View mLoginFormView;
+    @BindView(R.id.imgAvatar) CircleImageView imgAvatar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +55,9 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
         // Using ButterKnife annotation library now
 
         loginPresenter = new LoginPresenterImplementation(this);
+
+        String URL = "https://a.slack-edge.com/ae7f/img/services/jenkins-ci_512.png";
+        Glide.with(this).load(URL).into(imgAvatar);
     }
 
     /**
