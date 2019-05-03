@@ -1,15 +1,20 @@
 <resources>
-    <string name="app_name">Mvp</string>
+    <string name="app_name">Android Chat</string>
 
-    <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password (optional)</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="error_invalid_email">This email address is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
-    <string name="error_field_required">This field is required</string>
-    <string name="error_user_not_found">This username was not found. Use your registered email.</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
+    <string name="login.message.email">Email</string>
+    <string name="login.message.password">Password</string>
+    <string name="login.message.signin">Sign In</string>
+    <string name="login.message.signup">Sign up</string>
+    <string name="login.notice.message.useradded">You have successfully registered and logged in</string>
+    <string name="login.error.message.signin">Unable to login %s</string>
+    <string name="login.error.message.signup">Unable to sing up %s</string>
+    <string name="contactlist.menu.action.signoff">Sign out</string>
+    <string name="contactlist.title">Contacts</string>
+
+    <string name="addcontact.message.title">Add contact</string>
+    <string name="addcontact.message.add">Accept</string>
+    <string name="addcontact.message.cancel">Cancel</string>
+    <string name="addcontact.message.contactadded">Contant has been added successfully</string>
+    <string name="addcontact.error.message">Unable to add user</string>
+
 </resources>
