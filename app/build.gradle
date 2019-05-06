@@ -19,11 +19,11 @@ android {
     }
 
 //    //exclude some files
-//    packagingOptions {
-//        exclude 'META-INF/LICENSE'
-//        exclude 'META-INF/LICENSE-FIREBASE.txt'
-//        exclude 'META-INF/NOTICE'
-//    }
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE-FIREBASE.txt'
+        exclude 'META-INF/NOTICE'
+    }
 }
 
 dependencies {
@@ -35,9 +35,9 @@ dependencies {
     implementation "com.android.support:design:$rootProject.ext.supportLibraryVersion"
     implementation "com.android.support:support-v4:$rootProject.supportLibraryVersion"
 
-//    implementation "com.google.firebase:firebase-database:$rootProject.ext.firebaseVersion"
-//    implementation "com.google.firebase:firebase-auth:$rootProject.ext.firebaseVersion"
-//    implementation "com.google.firebase:firebase-core:$rootProject.ext.firebaseVersion"
+    implementation "com.google.firebase:firebase-database:$rootProject.ext.firebaseVersion"
+    implementation "com.google.firebase:firebase-auth:$rootProject.ext.firebaseVersion"
+    implementation "com.google.firebase:firebase-core:$rootProject.ext.firebaseVersion"
     implementation "de.hdodenhof:circleimageview:$rootProject.ext.circleImageViewVersion"
 
     implementation "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
@@ -49,4 +49,4 @@ dependencies {
 
 }
 
-//apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.gms.google-services'
